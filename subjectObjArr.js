@@ -1,4 +1,4 @@
-[
+subjectArr = [
     {
         "tooPer": [
             "36101",
@@ -28050,4 +28050,4 @@
         "code": "94685",
         "name": "The Navigator+"
     }
-]
+];
