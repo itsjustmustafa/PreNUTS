@@ -1,0 +1,88 @@
+body{
+	font-family: 'Calibri';
+	background-color: rgb(100, 220, 240);
+}
+h1{
+	font-weight: lighter;
+	font-size: 50px;
+}
+.tooperSubject{
+	margin: 5px;
+	padding: 5px 20px 5px 20px;
+	background: rgb(250,200,0);
+	border-width: 2px;
+	border-style: outset;
+	border-color: rgb(250,200,0);
+	font-size: 20px;
+	white-space: normal;
+	display: inline-block;
+	width: fill;
+}
+.currentSubject{
+	margin: 5px;
+	padding: 5px 20px 5px 20px;
+	background: rgb(130,250,120);
+	border-width: 2px;
+	border-style: outset;
+	border-color: rgb(130,250,120);
+	font-size: 20px;
+	white-space: normal;
+	display: inline-block;
+	width: fill;
+}
+.prereqSubject{
+	margin: 5px;
+	padding: 5px 20px 5px 20px;
+	background: rgb(200,125,125);
+	border-width: 2px;
+	border-style: outset;
+	border-color: rgb(200,125,125);
+	font-size: 20px;
+	white-space: normal;
+	display: inline-block;
+	width: fill;
+}
+.headRow{
+	margin: 5px;
+	padding: 5px 20px 5px 20px;
+	background: rgb(75,175,200);
+	border-width: 2px;
+	border-style: outset;
+	border-color: rgb(75,175,200);
+	font-size: 20px;
+	white-space: normal;
+	display: inline-block;
+	width: fill;
+}
+#prenutsInput{
+	font-size: 40px;
+	width: 80%;
+	border: none;
+	margin: auto 0;
+	text-align: 'center'; 
+	height:100%;
+	background-color: rgb(150, 240, 255);
+	color: rgb(20, 50, 60);
+}
+#prenutsInput:focus{
+	outline: none;
+}
+#prenutsInput::placeholder{
+	color: rgb(40, 100, 120);
+	font-style: italic;
+}
+#inputWrapper{
+	font-size: 40px;
+	text-align: 'center';
+	width: 100%;
+	height: 50px;
+}
+#prenutsTable{
+	width: 90%;
+}
+td span{
+	width: 70%;
+}
+td{
+	width: 33%;
+}
