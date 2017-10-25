@@ -24,9 +24,12 @@ createTable = function(){
 
 	let headRow = 'class=\'headRow\'';
 	if(subjectQueryArr.length==0){
+		console.log("nuffin here!!!");
 		tableContent = '<tr><td></td><td><span class=\'currentSubject\'>No Result</span></td><td></td></tr>'
 	}
 	if(subjectQueryArr.length==1){
+		
+		console.log("found this!!!");
 		currSubject = subjectQueryArr[0];
 
 
@@ -84,6 +87,7 @@ createTable = function(){
 	}
 
 	if(subjectQueryArr.length>1){
+		console.log("many tonggsss");
 		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
 		for(i=0;i<subjectQueryArr.length;i++){	
 			tableContent+= '<tr><td></td><td><span class=\'currentSubject\' '+
