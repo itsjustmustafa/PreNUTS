@@ -3,7 +3,7 @@
 
 Map out your subject options with PreNUTS
 
-Go [here](itsjustmustafa.github.io/PreNUTS)
+Go [here](http://www.itsjustmustafa.github.io/PreNUTS)
 
 Currently Supported:
 - UTS [(handbook)](http://www.handbook.uts.edu.au/)
