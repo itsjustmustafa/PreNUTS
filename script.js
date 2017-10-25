@@ -3,9 +3,16 @@ let currSubject;
 let currQuery;
 
 submitText = function(event, run=false){
+	console.log(event);
 	if(run || event.key == 'Enter'){
 		console.log(document.getElementById('prenutsInput'));
 		location.href = location.href.split('?')[0]+'?currQuery='+document.getElementById('prenutsInput').value;		
+	}else{
+		currQuery = document.getElementById('prenutsInput').value;
+		subjectQueryArr = querySubject(currQuery);
+		console.log(currQuery);
+		createTable(true);
+
 	}
 	
 }
@@ -18,11 +25,29 @@ selectSpan = function(event){
 }
 
 
-createTable = function(){
+createTable = function(suggest = false){
+
 	let table = document.getElementById('prenutsTable');
 	let tableContent = '';
 
 	let headRow = 'class=\'headRow\'';
+
+	if(subjectQueryArr.length>1 || suggest){
+
+		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
+		for(i=0;i<subjectQueryArr.length;i++){	
+			tableContent+= '<tr><td></td><td><span class=\'currentSubject\' '+
+				'onclick = \'selectSpan(event)\' '+
+				'subjectCode=\''+subjectQueryArr[i].code+'\' '+
+				'subjectName=\''+subjectQueryArr[i].name+'\'>'+
+				subjectQueryArr[i].code+
+				" : "+
+				subjectQueryArr[i].name+
+				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectQueryArr[i].code+'.html\' target=\'_blank\'>(Handbook)</a>'+
+				'</span></td><td></td></tr>';		
+		}
+	}	
+
 	if(subjectQueryArr.length==0){
 		tableContent = '<tr><td></td><td><span class=\'currentSubject\'>No Result</span></td><td></td></tr>'
 	}
@@ -83,20 +108,7 @@ createTable = function(){
 		// tableContent = '<tr><td><span class=\"subject\">No Result</span></td></tr>'
 	}
 
-	if(subjectQueryArr.length>1){
-		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
-		for(i=0;i<subjectQueryArr.length;i++){	
-			tableContent+= '<tr><td></td><td><span class=\'currentSubject\' '+
-				'onclick = \'selectSpan(event)\' '+
-				'subjectCode=\''+subjectQueryArr[i].code+'\' '+
-				'subjectName=\''+subjectQueryArr[i].name+'\'>'+
-				subjectQueryArr[i].code+
-				" : "+
-				subjectQueryArr[i].name+
-				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectQueryArr[i].code+'.html\' target=\'_blank\'>(Handbook)</a>'+
-				'</span></td><td></td></tr>';		
-		}
-	}
+
 	// console.log(tableContent);
 	table.innerHTML = tableContent;
 
@@ -120,7 +132,7 @@ querySubject = function(query){
 
 window.onload = function(){
 	if(location.href.split('?').length>1){
-		console.log('yeeee');
+		// console.log('yeeee');
 		currQuery=location.href.split('?')[1].split('=')[1];
 		document.getElementById('prenutsInput').value = currQuery;
 		currQuery = currQuery.replace(/%20/g, ' ');
