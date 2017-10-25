@@ -1,6 +1,8 @@
 let subjectQueryArr;
 let currSubject;
 
+console.log("bitches and money");
+
 submitText = function(event, run=false){
 	if(run || event.key == 'Enter'){
 		subjectQueryArr = querySubject(document.getElementById('prenutsInput').value);
