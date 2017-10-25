@@ -1,16 +1,19 @@
 let subjectQueryArr;
 let currSubject;
+let currQuery;
 
-console.log("bitches and money");
 
 submitText = function(event, run=false){
 	if(run || event.key == 'Enter'){
-		subjectQueryArr = querySubject(document.getElementById('prenutsInput').value);
+		currQuery = document.getElementById('prenutsInput').value;
+		subjectQueryArr = querySubject(currQuery);
 		// console.log(event.srcElement.value);
-		createTable();
+		document.location.href = 'www.itsjustmustafa.github.io/PreNuts?currQuery='+currQuery;
+		
 	}
 	
 }
+
 
 selectSpan = function(event){
 	if(event.srcElement.tagName=='SPAN'){
@@ -26,12 +29,12 @@ createTable = function(){
 
 	let headRow = 'class=\'headRow\'';
 	if(subjectQueryArr.length==0){
-		console.log("nuffin here!!!");
+		
 		tableContent = '<tr><td></td><td><span class=\'currentSubject\'>No Result</span></td><td></td></tr>'
 	}
 	if(subjectQueryArr.length==1){
 		
-		console.log("found this!!!");
+		
 		currSubject = subjectQueryArr[0];
 
 
@@ -89,7 +92,7 @@ createTable = function(){
 	}
 
 	if(subjectQueryArr.length>1){
-		console.log("many tonggsss");
+		
 		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
 		for(i=0;i<subjectQueryArr.length;i++){	
 			tableContent+= '<tr><td></td><td><span class=\'currentSubject\' '+
@@ -121,4 +124,9 @@ querySubject = function(query){
 		} 
 	}
 	return(results);
+}
+
+if(currQuery){
+	submitText(0,true);
+	createTable();
 }
