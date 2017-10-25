@@ -119,18 +119,40 @@ createTable = function(suggest = false){
 
 }
 
+function CompareSubjects (a,b) {
+	if (a.name < b.name)
+	{
+		return -1;
+	} 
+	if (a.name > b.name)
+	{
+		return 1;
+	}
+	return 0;
+}
+
 querySubject = function(query){
 	let results = [];
+	var FoundAMatchPreviously = false;
+
+	//Algorithmn should be implemented to find first possible match faster
+	//This currently will find the first match, then stop when matches stop occuring
 	for(let i = 0; i< subjectArr.length; i++){
-		if( (subjectArr[i].code+" "+subjectArr[i].name).toLowerCase().includes( query.toLowerCase() ) ){
+		if (subjectArr[i].name.toLowerCase().startsWith(query.toLowerCase())){
 			results.push(subjectArr[i]);
-		} 
+			FoundAMatchPreviously = true;
+		}
+		else if (FoundAMatchPreviously){
+			break; //Stops querying once its passed possible values 
+		}
 	}
 	return(results);
 }
 
 
 window.onload = function(){
+	subjectArr.sort(CompareSubjects);
+
 	if(location.href.split('?').length>1){
 		// console.log('yeeee');
 		currQuery=location.href.split('?')[1].split('=')[1];
