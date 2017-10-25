@@ -56,9 +56,9 @@ createTable = function(){
 			tableContent+='</td><td>';
 
 			if(i == 0){
-				tableContent+= '<span class=\'currentSubject\'>'+(currSubject.code+
+				tableContent+= '<span class=\'currentSubject\'>'+currSubject.code+
 					" : "+
-					currSubject.name)+
+					currSubject.name+
 					' <a href=\'http://handbook.uts.edu.au/subjects/'+currSubject.code+'.html\' target=\'_blank\'>(Handbook)</a>'+
 					'</span>';
 			}
@@ -70,9 +70,9 @@ createTable = function(){
 					'onclick = \'selectSpan(event)\' '+
 					'subjectCode=\''+currSubject.tooPer[i]+'\' '+
 					'subjectName=\''+querySubject(currSubject.tooPer[i])[0].name+'\'>'+
-					(currSubject.tooPer[i]+
+					currSubject.tooPer[i]+
 					" : "+
-					querySubject(currSubject.tooPer[i])[0].name)+
+					querySubject(currSubject.tooPer[i])[0].name+
 					' <a href=\'http://handbook.uts.edu.au/subjects/'+currSubject.tooPer[i]+'.html\' target=\'_blank\'>(Handbook)</a>'+
 					'</span>';
 			}
@@ -81,6 +81,21 @@ createTable = function(){
 
 		}
 		// tableContent = '<tr><td><span class=\"subject\">No Result</span></td></tr>'
+	}
+
+	if(subjectQueryArr.length>1){
+		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
+		for(i=0;i<subjectQueryArr.length;i++){	
+			tableContent+= '<tr><td></td><td><span class=\'currentSubject\' '+
+				'onclick = \'selectSpan(event)\' '+
+				'subjectCode=\''+subjectQueryArr[i].code+'\' '+
+				'subjectName=\''+subjectQueryArr[i].name+'\'>'+
+				subjectQueryArr[i].code+
+				" : "+
+				subjectQueryArr[i].name+
+				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectQueryArr[i].code+'.html\' target=\'_blank\'>(Handbook)</a>'+
+				'</span></td><td></td></tr>';		
+		}
 	}
 	// console.log(tableContent);
 	table.innerHTML = tableContent;

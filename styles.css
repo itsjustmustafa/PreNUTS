@@ -18,6 +18,9 @@ h1{
 	display: inline-block;
 	width: fill;
 }
+.tooperSubject:link{
+	color: #fff;
+}
 .currentSubject{
 	margin: 5px;
 	padding: 5px 20px 5px 20px;
