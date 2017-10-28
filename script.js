@@ -151,7 +151,7 @@ window.onload = function(){
 
 		document.getElementById('prenutsInput').value = currQuery;
 		subjectQueryArr = querySubject(currQuery);
-		createTable();a
+		createTable();
 		document.title = 'PreNUTS - '+currQueryss;
 	}
 }
