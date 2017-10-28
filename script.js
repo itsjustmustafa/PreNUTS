@@ -152,6 +152,6 @@ window.onload = function(){
 		document.getElementById('prenutsInput').value = currQuery;
 		subjectQueryArr = querySubject(currQuery);
 		createTable();
-		document.title = 'PreNUTS - '+currQueryss;
+		document.title = 'PreNUTS - '+currQuery;
 	}
 }
