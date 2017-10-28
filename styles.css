@@ -1,6 +1,7 @@
 body{
 	font-family: 'Tw Cen MT';
 	background-color: rgb(100, 220, 240);
+	text-rendering: optimizeLegibility;
 }
 h1{
 	font-weight: lighter;
