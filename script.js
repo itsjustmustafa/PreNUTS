@@ -9,9 +9,14 @@ submitText = function(event, run=false){
 		location.href = location.href.split('?')[0]+'?currQuery='+document.getElementById('prenutsInput').value;		
 	}else{
 		currQuery = document.getElementById('prenutsInput').value;
-		subjectQueryArr = querySubject(currQuery);
-		console.log(currQuery);
-		createTable(true);
+		if(currQuery.length>0){
+			subjectQueryArr = querySubject(currQuery);
+			console.log(currQuery);
+			createTable(true);
+		}else{
+			subjectQueryArr=[]
+			createTable(true);
+		}
 
 	}
 	
@@ -19,7 +24,7 @@ submitText = function(event, run=false){
 
 selectSpan = function(event){
 	if(event.srcElement.tagName=='SPAN'){
-		document.getElementById('prenutsInput').value= event.srcElement.getAttribute('subjectcode')+" "+event.srcElement.getAttribute('subjectname');
+		document.getElementById('prenutsInput').value= event.srcElement.getAttribute('subjectname')+" "+event.srcElement.getAttribute('subjectcode');
 		submitText(0,true);
 	}
 }
@@ -32,7 +37,11 @@ createTable = function(suggest = false){
 
 	let headRow = 'class=\'headRow\'';
 
-	if(subjectQueryArr.length>1 || suggest){
+	if(subjectQueryArr.length>1 || (suggest && currQuery.length>0)){
+
+		if(subjectQueryArr.length > 50){
+			subjectQueryArr = subjectQueryArr.splice(0,50);	
+		}
 
 		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
 		for(i=0;i<subjectQueryArr.length;i++){	
@@ -49,7 +58,9 @@ createTable = function(suggest = false){
 	}	
 
 	if(subjectQueryArr.length==0){
-		tableContent = '<tr><td></td><td><span class=\'currentSubject\'>No Result</span></td><td></td></tr>'
+		if(currQuery.length>0){
+				tableContent = '<tr><td></td><td><span class=\'currentSubject\'>No Result</span></td><td></td></tr>'
+		}
 	}
 	if(subjectQueryArr.length==1){
 		currSubject = subjectQueryArr[0];
@@ -122,7 +133,7 @@ createTable = function(suggest = false){
 querySubject = function(query){
 	let results = [];
 	for(let i = 0; i< subjectArr.length; i++){
-		if( (subjectArr[i].code+" "+subjectArr[i].name).toLowerCase().includes( query.toLowerCase() ) ){
+		if( (subjectArr[i].name+" "+subjectArr[i].code).toLowerCase().includes( query.toLowerCase() ) ){
 			results.push(subjectArr[i]);
 		} 
 	}
@@ -140,6 +151,7 @@ window.onload = function(){
 
 		document.getElementById('prenutsInput').value = currQuery;
 		subjectQueryArr = querySubject(currQuery);
-		createTable();
+		createTable();a
+		document.title = 'PreNUTS - '+currQueryss;
 	}
 }
