@@ -1,5 +1,5 @@
 body{
-	font-family: 'Calibri';
+	font-family: 'Tw Cen MT';
 	background-color: rgb(100, 220, 240);
 }
 h1{
@@ -21,6 +21,7 @@ h1{
 .tooperSubject:hover{
 	background: rgb(255,220,50);
 	border-color: rgb(255,220,50);
+	cursor: pointer;
 }
 .currentSubject{
 	margin: 5px;
@@ -36,7 +37,8 @@ h1{
 }
 .currentSubject:hover{
 	background: rgb(170,255,160);
-	border-color: rgb(130,250,120);
+	border-color: rgb(170,255,160);
+	cursor: pointer;
 }
 .prereqSubject{
 	margin: 5px;
@@ -53,6 +55,7 @@ h1{
 .prereqSubject:hover{
 	background: rgb(240,150,150);
 	border-color: rgb(240,150,150);
+	cursor: pointer;
 }
 .headRow{
 	margin: 5px;
@@ -96,5 +99,6 @@ td span{
 	width: 70%;
 }
 td{
+	text-align: center;
 	width: 33%;
 }
