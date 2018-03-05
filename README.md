@@ -8,12 +8,15 @@ Go [here](http://itsjustmustafa.github.io/PreNUTS)
 Currently Supported:
 - UTS [(handbook)](http://www.handbook.uts.edu.au/)
 
-Also included is the:
-## _Djik BUTT:_ *Djik*stra *B*ased *U*niversity *T*ooPr *T*imeline
+---
+
+## Future Features
+
+### Djikstra Based University TooPr Tree
 
 Plan out your future subjects using this Djikstra based tool
 
-## _HNDJOB:_ *H*a*ND*book based *J*SON *O*mni*B*us
+### Handbook based JSON OmniBus
 
 Get a grip on your universal Handbook
 
