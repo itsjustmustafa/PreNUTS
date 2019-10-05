@@ -137,7 +137,7 @@ querySubject = function(query){
 			results.push(subjectArr[i]);
 		} 
 	}
-	return(results);
+	return(results.sort((sub1, sub2)=>(sub1.name>sub1.name ? 1 : -1)));
 }
 
 
