@@ -11,6 +11,7 @@ submitText = function(event, run=false){
 		currQuery = document.getElementById('prenutsInput').value;
 		if(currQuery.length>0){
 			subjectQueryArr = querySubject(currQuery);
+			subjectQueryArr = subjectQueryArr.sort((a, b)=>(a.name < b.name ? -1 : 1))
 			console.log(currQuery);
 			createTable(true);
 		}else{
