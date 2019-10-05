@@ -153,6 +153,7 @@ window.onload = function(){
 
 		document.getElementById('prenutsInput').value = currQuery;
 		subjectQueryArr = querySubject(currQuery);
+		subjectQueryArr = subjectQueryArr.sort((a, b)=>(a.name < b.name ? -1 : 1))
 		createTable();
 		document.title = 'PreNUTS - '+currQuery;
 	}
