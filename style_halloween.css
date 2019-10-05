@@ -1,6 +1,6 @@
 body{
 	font-family: 'Tw Cen MT';
-	background-color: rgb(100, 220, 240);
+	background-color: rgb(170,145,200);
 	text-rendering: optimizeLegibility;
 }
 h1{
@@ -15,61 +15,61 @@ p{
 .tooperSubject{
 	margin: 5px;
 	padding: 5px 20px 5px 20px;
-	background: rgb(250,200,0);
+	background: rgb(220,150,90);
 	border-width: 2px;
 	border-style: outset;
-	border-color: rgb(250,200,0);
+	border-color: rgb(220,150,90);
 	font-size: 20px;
 	white-space: normal;
 	display: inline-block;
 	width: fill;
 }
 .tooperSubject:hover{
-	background: rgb(255,220,50);
-	border-color: rgb(255,220,50);
+	background: rgb(250,185,100);
+	border-color: rgb(250,185,100);
 	cursor: pointer;
 }
 .currentSubject{
 	margin: 5px;
 	padding: 5px 20px 5px 20px;
-	background: rgb(130,250,120);
+	background: rgb(130,200,135);
 	border-width: 2px;
 	border-style: outset;
-	border-color: rgb(130,250,120);
+	border-color: rgb(130,200,135);
 	font-size: 20px;
 	white-space: normal;
 	display: inline-block;
 	width: fill;
 }
 .currentSubject:hover{
-	background: rgb(170,255,160);
-	border-color: rgb(170,255,160);
+	background: rgb(185,225,185);
+	border-color: rgb(185,225,185);
 	cursor: pointer;
 }
 .prereqSubject{
 	margin: 5px;
 	padding: 5px 20px 5px 20px;
-	background: rgb(200,125,125);
+	background: rgb(90,165,185);
 	border-width: 2px;
 	border-style: outset;
-	border-color: rgb(200,125,125);
+	border-color: rgb(90,165,185);
 	font-size: 20px;
 	white-space: normal;
 	display: inline-block;
 	width: fill;
 }
 .prereqSubject:hover{
-	background: rgb(240,150,150);
-	border-color: rgb(240,150,150);
+	background: rgb(160,205,215);
+	border-color: rgb(160,205,215);
 	cursor: pointer;
 }
 .headRow{
 	margin: 5px;
 	padding: 5px 20px 5px 20px;
-	background: rgb(75,175,200);
+	background: rgb(135,100,175);
 	border-width: 2px;
 	border-style: outset;
-	border-color: rgb(75,175,200);
+	border-color: rgb(135,100,175);
 	font-size: 20px;
 	white-space: normal;
 	display: inline-block;
@@ -82,14 +82,14 @@ p{
 	margin: auto 0;
 	text-align: 'center'; 
 	height:100%;
-	background-color: rgb(150, 240, 255);
-	color: rgb(20, 50, 60);
+	background-color: rgb(200,185,220);
+	color: rgb(50,35,70);
 }
 #prenutsInput:focus{
 	outline: none;
 }
 #prenutsInput::placeholder{
-	color: rgb(40, 100, 120);
+	color: rgb(95, 65, 125);
 	font-style: italic;
 }
 #inputWrapper{
