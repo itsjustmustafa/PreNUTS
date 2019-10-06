@@ -68,7 +68,7 @@ p{
 	padding: 5px 20px 5px 20px;
 	background: rgb(75,175,200);
 	border-width: 2px;
-	border-style: outset;
+	border-style: none;
 	border-color: rgb(75,175,200);
 	font-size: 20px;
 	white-space: normal;
