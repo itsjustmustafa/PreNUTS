@@ -1,5 +1,8 @@
 # PreNUTS
-## Prerequisite Network for Universities (and TooPr System)
+## Pre-requisite Network for Universities (and TooPr System)
+
+### TooPr:
+/ˈtuːpə/ - The opposite of Pre-requisite
 
 Map out your subject options with PreNUTS
 
