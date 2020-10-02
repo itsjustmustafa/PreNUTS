@@ -1,4 +1,4 @@
-# PreNUTS - A nutty project 
+# PreNUTS - A 🥜 project 
 ## Pre-requisite Network for Universities (and TooPr System)
 
 ---
