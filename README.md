@@ -1,6 +1,6 @@
 # PreNUTS - A 🥜 project 
 ## Pre-requisite Network for Universities (and TooPr System)
-
+### Go [here!](http://itsjustmustafa.github.io/PreNUTS)
 ---
 ### TooPr:
 /ˈtuːpə/ - The opposite of Pre-requisite
@@ -13,9 +13,7 @@ eg.
 
 ---
 
-Map out your subject options with PreNUTS
-
-Go [here](http://itsjustmustafa.github.io/PreNUTS)
+Map out your subject options with PreNUTS!
 
 Currently Supported:
 - UTS [(handbook)](http://www.handbook.uts.edu.au/)
