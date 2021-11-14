@@ -43,7 +43,7 @@ getSubjectSpanHTML = function(subjectObjCode,subjectObjName, subjectType){
 				subjectObjCode+
 				" : "+
 				subjectObjName+
-				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectObj.code+'.html\' target=\'_blank\'>(Handbook)</a>'+
+				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectObjCode+'.html\' target=\'_blank\'>(Handbook)</a>'+
 				'</span></td><td></td></tr>';
 }
 
