@@ -31,6 +31,24 @@ selectSpan = function(event){
 }
 
 
+getSubjectSpanHTML = function(subjectObjCode,subjectObjName, subjectType){
+	let clickEvent = "onclick = \'selectSpan(event)\'";
+	if(subjectObjName == ""){
+		clickEvent = "";
+	}
+	let tableContent += '<tr><td></td><td><span class=\'" + subjectType + "\' '+
+				clickEvent +
+				'subjectCode=\''+subjectObjCode+'\' '+
+				'subjectName=\''+subjectObjName+'\'>'+
+				subjectObjCode+
+				" : "+
+				subjectObjName+
+				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectObj.code+'.html\' target=\'_blank\'>(Handbook)</a>'+
+				'</span></td><td></td></tr>';
+	
+	return tableContent;
+}
+
 createTable = function(suggest = false){
 
 	let table = document.getElementById('prenutsTable');
@@ -46,15 +64,7 @@ createTable = function(suggest = false){
 
 		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
 		for(i=0;i<subjectQueryArr.length;i++){	
-			tableContent+= '<tr><td></td><td><span class=\'currentSubject\' '+
-				'onclick = \'selectSpan(event)\' '+
-				'subjectCode=\''+subjectQueryArr[i].code+'\' '+
-				'subjectName=\''+subjectQueryArr[i].name+'\'>'+
-				subjectQueryArr[i].code+
-				" : "+
-				subjectQueryArr[i].name+
-				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectQueryArr[i].code+'.html\' target=\'_blank\'>(Handbook)</a>'+
-				'</span></td><td></td></tr>';		
+			tableContent+= getSubjectSpanHTML(subjectQueryArr[i].code,subjectQueryArr[i].name, "currentSubject");	
 		}
 	}	
 
@@ -79,15 +89,13 @@ createTable = function(suggest = false){
 			tableContent += "<tr><td>";
 			
 			if(i<currSubject.preReq.length){
-				tableContent+= '<span class=\'prereqSubject\' '+
-					'onclick = \'selectSpan(event)\' '+
-					'subjectCode=\''+currSubject.preReq[i]+'\' '+
-					'subjectName=\''+querySubject(currSubject.preReq[i])[0].name+'\'>'+
-					(currSubject.preReq[i]+
-					" : "+
-					querySubject(currSubject.preReq[i])[0].name)+
-					' <a href=\'http://handbook.uts.edu.au/subjects/'+currSubject.preReq[i]+'.html\' target=\'_blank\'>(Handbook)</a>'+
-					'</span>';
+				let preReqName = null;
+				if(querySubject(currSubject.preReq[i]).length == 0){
+					preReqName = "";
+				}else{
+					preReqName = querySubject(currSubject.preReq[i])[0].name;
+				}
+				tableContent+= getSubjectSpanHTML(currSubject.preReq[i], preReqName, "prereqSubject");
 			}
 
 			tableContent+='</td><td>';
@@ -102,16 +110,13 @@ createTable = function(suggest = false){
 			tableContent+= '</td><td>';
 
 			if(i<currSubject.tooPer.length){
-				// console.log("still sall");
-				tableContent+= '<span class=\'tooperSubject\' '+
-					'onclick = \'selectSpan(event)\' '+
-					'subjectCode=\''+currSubject.tooPer[i]+'\' '+
-					'subjectName=\''+querySubject(currSubject.tooPer[i])[0].name+'\'>'+
-					currSubject.tooPer[i]+
-					" : "+
-					querySubject(currSubject.tooPer[i])[0].name+
-					' <a href=\'http://handbook.uts.edu.au/subjects/'+currSubject.tooPer[i]+'.html\' target=\'_blank\'>(Handbook)</a>'+
-					'</span>';
+				let tooPerName = null;
+				if(querySubject(currSubject.tooPer[i]).length == 0){
+					tooPerName = "";
+				}else{
+					tooPerName = querySubject(currSubject.tooPer[i])[0].name;
+				}
+				tableContent+= getSubjectSpanHTML(currSubject.tooPer[i], tooPerName, "tooperSubject");
 			}
 
 			tableContent+= '</td></tr>';
