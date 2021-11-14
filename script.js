@@ -94,6 +94,8 @@ createTable = function(suggest = false){
 					preReqName = querySubject(currSubject.preReq[i])[0].name;
 				}
 				tableContent+= getSubjectSpanHTML(currSubject.preReq[i], preReqName, "prereqSubject");
+			}else{
+				tableContent+= "<p> - No preReq - </p>"
 			}
 
 			tableContent+='</td><td>';
@@ -104,6 +106,8 @@ createTable = function(suggest = false){
 					currSubject.name+
 					' <a href=\'http://handbook.uts.edu.au/subjects/'+currSubject.code+'.html\' target=\'_blank\'>(Handbook)</a>'+
 					'</span>';
+			}else{
+				tableContent+= "<p> - No currSubj - </p>"
 			}
 			tableContent+= '</td><td>';
 
@@ -115,6 +119,8 @@ createTable = function(suggest = false){
 					tooPerName = querySubject(currSubject.tooPer[i])[0].name;
 				}
 				tableContent+= getSubjectSpanHTML(currSubject.tooPer[i], tooPerName, "tooperSubject");
+			}else{
+				tableContent+= "<p> - No tooPer - </p>"
 			}
 
 			tableContent+= '</td></tr>';
