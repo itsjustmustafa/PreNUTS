@@ -1,0 +1,51 @@
+<html>
+	<!-- Data scraped from http://handbook.uts.edu.au/subjects/alpha.html -->
+	<head>
+		<title>PreNUTS</title>
+		<link rel='stylesheet' href="styles_halloween.css">
+		<script src="script.js"></script>
+		<script src="usefulFunctions.js"></script>
+		<script src="subjectObjArr2021.js"></script>
+		
+	</head>
+	<body align='center'>
+		<p style="font-size: 10" align="right">Created By Mustafa Barodawala</br><a href="https://www.github.com/itsjustmustafa">github.com/itsjustmustafa</a></br></br>Updated November 2021</p>
+		<p style="font-size: 20" align="right"><a href="https://github.com/itsjustmustafa/PreNUTS#prenuts---a--project">About</a></p>
+		<h1 align='center'>
+			<a href='https://itsjustmustafa.github.io/PreNUTS/' style='text-decoration: none; color: black'>
+				PreNUTS
+			</a>
+		</h1>
+
+	<h1 id="limitation-of-prenuts">Limitation of PreNUTS</h1>
+	<p>PreNUTS was developed as a procrastination project, between two somewhat intense uni assignments back in 2017. As such, a lot of it is hacky, and not as ideal as it could be. The following are the limitations of PreNUTS</p>
+
+	<ol>
+		<li><p><strong>PreNUTS only catalogues UTS subjects:</strong> Currently, and for the foreseeable future, this tool is catered only for UTS students, and more specifically the <a href="https://www.handbook.uts.edu.au/">UTS Handbook</a> website. There is currently no plans to extend this tool to catalogue subjects from other universities or institutions.</p>
+		</li>
+		<li><p><strong>PreNUTS does not automatically update:</strong> UTS does not update their subject handbook at regular intervals, but instead updates it whenever a subject&#39;s information changes. A possible future change could involve automated periodic scraping of the handbook to update PreNUTS, however such automation at the moment is not a consideration for this project, and must be done in a way that UTS is cool with (scraping someone else&#39;s site regularly can place a strain on them)</p>
+		</li>
+		<li><p><strong>PreNUTS does not catalogue conditional relationships on prerequisite subjects:</strong> Currently PreNUTS simply lists any subject mentioned as a prerequisite. It does not check, between two subject, whether both are required or only one is required.</p>
+		</li>
+		<li><p><strong>PreNUTS does not catalogue subjects not listed on the UTS Handbook subject list:</strong> If a subject is not listed on subject lists for each faculty, it is not catalogued on the site. These are the source subject lists:</p>
+		<ul>
+			<li><a href="https://www.handbook.uts.edu.au/ads/lists/alpha.html">Analytics and Data Science</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/bus/lists/alpha.html">Business</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/comm/lists/alpha.html">Communication</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/cii/lists/alpha.html">Creative Intelligence and Innovation</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/dab/lists/alpha.html">Design, Architecture and Building</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/edu/lists/alpha.html">Education</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/eng/lists/alpha.html">Engineering</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/health/lists/alpha.html">Health</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/health-gem/lists/alpha.html">Health (GEM)</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/it/lists/alpha.html">Information Technology</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/intl/lists/alpha.html">International Studies and Social Sciences</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/it/lists/alpha.html">Law</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/sci/lists/alpha.html">Science</a></li>
+			<li><a href="https://www.handbook.uts.edu.au/tdi/lists/alpha.html">Transdisciplinary Innovation</a></li>
+		</ul>
+		</li>
+	</ol>
+
+	</body>
+</html>
