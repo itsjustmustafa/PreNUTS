@@ -62,7 +62,7 @@ createTable = function(suggest = false){
 
 		tableContent += '<tr><td></td><td><span '+headRow+'>Choose One Of The Following</span></td><td></td></tr>';
 		for(i=0;i<subjectQueryArr.length;i++){	
-			tableContent+= getSubjectSpanHTML(subjectQueryArr[i].code,subjectQueryArr[i].name, "currentSubject");	
+			tableContent+= "<tr><td></td><td>" + getSubjectSpanHTML(subjectQueryArr[i].code,subjectQueryArr[i].name, "currentSubject") + "</td><td></td></tr>";	
 		}
 	}	
 
@@ -94,10 +94,7 @@ createTable = function(suggest = false){
 					preReqName = querySubject(currSubject.preReq[i])[0].name;
 				}
 				tableContent+= getSubjectSpanHTML(currSubject.preReq[i], preReqName, "prereqSubject");
-			}else{
-				tableContent+= "<p> - No preReq - </p>"
 			}
-
 			tableContent+='</td><td>';
 
 			if(i == 0){
@@ -106,8 +103,6 @@ createTable = function(suggest = false){
 					currSubject.name+
 					' <a href=\'http://handbook.uts.edu.au/subjects/'+currSubject.code+'.html\' target=\'_blank\'>(Handbook)</a>'+
 					'</span>';
-			}else{
-				tableContent+= "<p> - No currSubj - </p>"
 			}
 			tableContent+= '</td><td>';
 
@@ -119,8 +114,6 @@ createTable = function(suggest = false){
 					tooPerName = querySubject(currSubject.tooPer[i])[0].name;
 				}
 				tableContent+= getSubjectSpanHTML(currSubject.tooPer[i], tooPerName, "tooperSubject");
-			}else{
-				tableContent+= "<p> - No tooPer - </p>"
 			}
 
 			tableContent+= '</td></tr>';
