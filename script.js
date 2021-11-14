@@ -36,15 +36,15 @@ getSubjectSpanHTML = function(subjectObjCode,subjectObjName, subjectType){
 	if(subjectObjName == ""){
 		clickEvent = "";
 	}
-	return '<tr><td></td><td><span class=\'" + subjectType + "\' '+
+	return "<tr><td></td><td><span class=\'" + subjectType + "\' "+
 				clickEvent +
-				'subjectCode=\''+subjectObjCode+'\' '+
-				'subjectName=\''+subjectObjName+'\'>'+
+				"subjectCode=\'"+subjectObjCode+"\' "+
+				"subjectName=\'"+subjectObjName+"\'>"+
 				subjectObjCode+
 				" : "+
 				subjectObjName+
-				' <a href=\'http://handbook.uts.edu.au/subjects/'+subjectObjCode+'.html\' target=\'_blank\'>(Handbook)</a>'+
-				'</span></td><td></td></tr>';
+				" <a href=\'http://handbook.uts.edu.au/subjects/"+subjectObjCode+".html\' target=\'_blank\'>(Handbook)</a>"+
+				"</span></td><td></td></tr>";
 }
 
 createTable = function(suggest = false){
